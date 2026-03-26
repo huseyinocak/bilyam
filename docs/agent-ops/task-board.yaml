@@ -1,0 +1,43 @@
+version: 1
+updated_at: 2026-03-26
+workflow:
+  branch_model: "agent/<agent-id>/<scope>"
+  commit_rule: "small-single-responsibility"
+  pr_rule: "one-agent-one-pr"
+agents:
+  - id: agent-a
+    owner: "Domain & Data Backbone"
+    status: ready
+    first_tasks:
+      - "create migrations for catalog + quote core tables"
+      - "create idempotent import command scaffold"
+  - id: agent-b
+    owner: "Public Catalog UX/UI"
+    status: ready
+    first_tasks:
+      - "create catalog index/detail blade skeleton"
+      - "create quote list UX partials"
+  - id: agent-c
+    owner: "Customer Panel & Auth"
+    status: ready
+    first_tasks:
+      - "create customer route group + middleware map"
+      - "create customer offers list/detail controller skeleton"
+  - id: agent-d
+    owner: "Admin Operations UI/UX"
+    status: ready
+    first_tasks:
+      - "create admin route group + dashboard controller skeleton"
+      - "create operations list page placeholders"
+  - id: agent-e
+    owner: "Notification, Integration, Observability"
+    status: ready
+    first_tasks:
+      - "create quote received notification pipeline skeleton"
+      - "create analytics event dictionary draft"
+  - id: agent-f
+    owner: "QA, Release & Security Gate"
+    status: ready
+    first_tasks:
+      - "create feature test matrix for quote lifecycle"
+      - "create security + release checklists"
