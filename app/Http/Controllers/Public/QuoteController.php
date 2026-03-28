@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Public;
 
+use App\Events\QuoteReceived;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\QuoteRequest;
@@ -80,6 +81,8 @@ class QuoteController extends Controller
                 'quantity' => max(1, (int) $qty),
             ]);
         }
+
+        QuoteReceived::dispatch($quote->load('items.product'));
 
         $request->session()->forget('quote_items');
 

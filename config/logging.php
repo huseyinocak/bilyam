@@ -123,6 +123,14 @@ return [
             'handler' => NullHandler::class,
         ],
 
+        'quote_pipeline' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/quote-pipeline.log'),
+            'level' => env('LOG_LEVEL', 'info'),
+            'days' => env('LOG_DAILY_DAYS', 14),
+            'replace_placeholders' => true,
+        ],
+
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
