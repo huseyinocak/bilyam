@@ -1,0 +1,17 @@
+{
+    "Dashboard": "Panel",
+    "Profile": "Profil",
+    "Log Out": "Cikis Yap",
+    "Email": "E-posta",
+    "Password": "Sifre",
+    "Confirm Password": "Sifre Tekrari",
+    "Remember me": "Beni hatirla",
+    "Forgot your password?": "Sifrenizi mi unuttunuz?",
+    "Log in": "Giris Yap",
+    "Register": "Kayit Ol",
+    "Already registered?": "Zaten hesabin var mi?",
+    "Name": "Ad Soyad",
+    "Forgot Password": "Sifremi Unuttum",
+    "Reset Password": "Sifre Sifirla",
+    "Verify Email": "E-postayi Dogrula"
+}
