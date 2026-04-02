@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mb-6 space-y-2">
-        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Musteri Kaydi</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Müşteri Kaydı</p>
         <h1 class="text-3xl font-semibold text-slate-900 dark:text-white">Yeni hesap olusturun</h1>
         <p class="text-sm text-slate-600 dark:text-slate-300">Uyelik teklif vermek icin zorunlu degil, fakat teklif gecmisi ve tekrar talep gibi avantajlar saglar.</p>
     </div>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="mt-4">
-            <x-input-label for="password" :value="'Sifre'" />
+            <x-input-label for="password" :value="'Şifre'" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -32,7 +32,7 @@
         </div>
 
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="'Sifre Tekrari'" />
+            <x-input-label for="password_confirmation" :value="'Şifre Tekrarı'" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -47,7 +47,7 @@
             </a>
 
             <x-primary-button class="ms-4">
-                Kayit Ol
+                Kayıt Ol
             </x-primary-button>
         </div>
     </form>

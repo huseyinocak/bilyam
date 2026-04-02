@@ -72,14 +72,14 @@ class QuoteController extends Controller
 
         $request->session()->put('quote_list', $items);
 
-        return redirect()->route('quote-list.index')->with('status', 'Secili teklif kalemleri yeni teklif listenize aktarıldı.');
+        return redirect()->route('quote-list.index')->with('status', 'Seçili teklif kalemleri yeni teklif listenize aktarıldı.');
     }
 
     private function statuses(): array
     {
         return [
             'new' => 'Yeni',
-            'in_review' => 'Inceleniyor',
+            'in_review' => 'İnceleniyor',
             'responded' => 'Cevaplandi',
             'closed' => 'Kapatildi',
         ];

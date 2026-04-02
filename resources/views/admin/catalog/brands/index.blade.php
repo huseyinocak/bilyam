@@ -31,7 +31,7 @@
                         </div>
                 </div>
             @empty
-                <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">Henuz marka kaydi yok.</div>
+                <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">Henüz marka kaydı yok.</div>
             @endforelse
         </section>
     </div>

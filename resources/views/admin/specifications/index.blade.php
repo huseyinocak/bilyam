@@ -1,19 +1,19 @@
 @extends('layouts.admin')
 
-@section('title', 'Teknik Ozellikler | Bilyam')
+@section('title', 'Teknik Özellikler | Bilyam')
 
 @section('content')
     <div class="space-y-6">
         <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-            <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Teknik Ozellik Sablonlari</h1>
+            <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Teknik Özellik Şablonları</h1>
             <form method="POST" action="{{ route('admin.specification-templates.store') }}" class="mt-6 grid gap-4 lg:grid-cols-5">
                 @csrf
                 <select name="category_id" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"><option value="">Kategori secin</option>@foreach($categories as $category)<option value="{{ $category->id }}">{{ $category->name }}</option>@endforeach</select>
-                <input type="text" name="name" placeholder="Sablon adi" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
+                <input type="text" name="name" placeholder="Şablon adı" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
                 <input type="text" name="slug" placeholder="slug" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
                 <input type="text" name="description" placeholder="Aciklama" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
                 <label class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-sm dark:border-slate-700"><input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" value="1" checked> Aktif</label>
-                <button type="submit" class="lg:col-span-5 rounded-full bg-bilya-blue px-4 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Sablon Ekle</button>
+                <button type="submit" class="lg:col-span-5 rounded-full bg-bilya-blue px-4 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Şablon Ekle</button>
             </form>
         </section>
         <section class="space-y-4">
@@ -27,7 +27,7 @@
                         <input type="text" name="description" value="{{ $template->description }}" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
                         <label class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-sm dark:border-slate-700"><input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" value="1" @checked($template->is_active)> Aktif</label>
                         <div class="lg:col-span-5 flex gap-3">
-                            <button type="submit" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">Sablonu Kaydet</button>
+                            <button type="submit" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">Şablonu Kaydet</button>
                     </form>
                             <form method="POST" action="{{ route('admin.specification-templates.destroy', $template) }}">@csrf @method('DELETE')<button type="submit" class="rounded-full border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600">Sil</button></form>
                         </div>
@@ -62,7 +62,7 @@
                                         </div>
                                 </div>
                             @empty
-                                <div class="rounded-2xl border border-dashed border-slate-300 px-4 py-6 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Bu sablona ait teknik alan bulunmuyor.</div>
+                                <div class="rounded-2xl border border-dashed border-slate-300 px-4 py-6 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Bu şablona ait teknik alan bulunmuyor.</div>
                             @endforelse
                         </div>
                     </div>

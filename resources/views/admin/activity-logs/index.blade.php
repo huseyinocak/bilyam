@@ -12,7 +12,7 @@
                 </div>
                 <form method="GET" action="{{ route('admin.activity-logs.index') }}">
                     <select name="channel" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                        <option value="">Tum kanallar</option>
+                        <option value="">Tüm kanallar</option>
                         @foreach($channels as $item)
                             <option value="{{ $item }}" @selected($channel === $item)>{{ strtoupper($item) }}</option>
                         @endforeach

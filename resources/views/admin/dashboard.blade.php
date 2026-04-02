@@ -7,7 +7,7 @@
         <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
             <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Operasyon Ozeti</p>
+                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Operasyon Özeti</p>
                     <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Teklif operasyonu icin hazir admin omurgasi</h1>
                 </div>
                 <p class="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">Sprint 1 bu paneli iskelet halinde ayirir. Sprint 3 ile teklif talepleri, satir bazli fiyatlama ve katalog kalite sinyalleri baglanacak.</p>
@@ -48,7 +48,7 @@
             <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
                 <div class="flex items-center justify-between gap-4">
                     <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Son Teklif Hareketleri</h2>
-                    <a href="{{ route('admin.quotes.index') }}" class="text-sm font-semibold text-bilya-blue">Tum teklifleri gor</a>
+                    <a href="{{ route('admin.quotes.index') }}" class="text-sm font-semibold text-bilya-blue">Tüm teklifleri gör</a>
                 </div>
                 <div class="mt-4 space-y-3">
                     @foreach ($latestQuotes as $quote)

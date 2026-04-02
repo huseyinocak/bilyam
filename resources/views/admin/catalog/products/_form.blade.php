@@ -16,12 +16,12 @@
         </div>
     @endif
 
-    <input type="text" name="name" value="{{ old('name', $product->name) }}" placeholder="Urun adi" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
-    <input type="text" name="code" value="{{ old('code', $product->code) }}" placeholder="Urun kodu" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
+    <input type="text" name="name" value="{{ old('name', $product->name) }}" placeholder="Ürün adı" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
+    <input type="text" name="code" value="{{ old('code', $product->code) }}" placeholder="Ürün kodu" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
     <input type="text" name="slug" value="{{ old('slug', $product->slug) }}" placeholder="slug" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
     <input type="number" step="0.01" name="price" value="{{ old('price', $product->price) }}" placeholder="Fiyat" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
     <select name="category_id" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-        <option value="">Kategori secin</option>
+        <option value="">Kategori seçin</option>
         @foreach($categories as $category)
             <option value="{{ $category->id }}" @selected((string) old('category_id', $product->category_id) === (string) $category->id)>{{ $category->name }}</option>
         @endforeach
@@ -45,7 +45,7 @@
 
     @if($template?->fields?->isNotEmpty())
         <div class="lg:col-span-2 rounded-2xl border border-slate-200 p-4 dark:border-slate-800">
-            <p class="text-sm font-semibold text-slate-900 dark:text-white">Teknik Degerler</p>
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">Teknik Değerler</p>
             <div class="mt-4 grid gap-4 lg:grid-cols-2">
                 @foreach($template->fields->sortBy('sort_order') as $field)
                     <label class="text-sm">
@@ -66,7 +66,7 @@
 
     <div class="lg:col-span-2 flex gap-3">
         <button type="submit" class="rounded-full bg-bilya-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">{{ $submitLabel }}</button>
-        <a href="{{ route('admin.products.index') }}" class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Listeye Don</a>
+        <a href="{{ route('admin.products.index') }}" class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Listeye Dön</a>
     </div>
 </form>
 
@@ -83,12 +83,12 @@
                             <button type="submit" class="w-full rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 dark:border-slate-700 dark:text-slate-200">Birincil Yap</button>
                         </form>
                     @else
-                        <div class="rounded-full bg-emerald-100 px-3 py-2 text-center text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">Birincil Gorsel</div>
+                        <div class="rounded-full bg-emerald-100 px-3 py-2 text-center text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">Birincil Görsel</div>
                     @endif
                     <form method="POST" action="{{ route('admin.products.images.destroy', [$product, $image]) }}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="w-full rounded-full border border-rose-200 px-3 py-2 text-xs font-semibold text-rose-600">Gorseli Sil</button>
+                        <button type="submit" class="w-full rounded-full border border-rose-200 px-3 py-2 text-xs font-semibold text-rose-600">Görseli Sil</button>
                     </form>
                 </div>
             </div>

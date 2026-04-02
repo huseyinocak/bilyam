@@ -37,7 +37,7 @@ class BrandController extends Controller
 
         ActivityLogger::log('catalog.brand.created', $brand, ['name' => $brand->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Marka olusturuldu.');
+        return back()->with('status', 'Marka oluşturuldu.');
     }
 
     public function update(Request $request, Brand $brand): RedirectResponse
@@ -58,7 +58,7 @@ class BrandController extends Controller
 
         ActivityLogger::log('catalog.brand.updated', $brand, ['name' => $brand->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Marka guncellendi.');
+        return back()->with('status', 'Marka güncellendi.');
     }
 
     public function destroy(Request $request, Brand $brand): RedirectResponse

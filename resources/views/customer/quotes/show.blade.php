@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex items-center justify-between gap-4">
             <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Teklif Detayi</p>
+                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Teklif Detayı</p>
                 <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">{{ $quote->quote_no }}</h1>
             </div>
             <form method="POST" action="{{ route('account.quotes.reorder', $quote) }}">
                 @csrf
-                <button type="submit" class="rounded-full bg-bilya-blue px-4 py-2 text-sm font-semibold text-white transition hover:bg-bilya-navy">Hizli Tekrar Talep</button>
+                <button type="submit" class="rounded-full bg-bilya-blue px-4 py-2 text-sm font-semibold text-white transition hover:bg-bilya-navy">Hızlı Tekrar Talep</button>
             </form>
         </div>
     </x-slot>
@@ -25,7 +25,7 @@
                                     <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ $item->product_code }} • {{ $item->quantity }} adet</p>
                                 </div>
                                 @if ($item->responseItem)
-                                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">Yanitlandi</span>
+                                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">Yanıtlandı</span>
                                 @else
                                     <span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Bekliyor</span>
                                 @endif
@@ -54,7 +54,7 @@
 
             <div class="space-y-6">
                 <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-                    <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Talep Ozeti</h2>
+                    <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Talep Özeti</h2>
                     <div class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
                         <div class="flex items-center justify-between"><span>Durum</span><span class="font-semibold text-slate-900 dark:text-white">{{ $quote->status }}</span></div>
                         <div class="flex items-center justify-between"><span>Talep Tarihi</span><span class="font-semibold text-slate-900 dark:text-white">{{ $quote->submitted_at?->format('d.m.Y H:i') }}</span></div>
@@ -64,7 +64,7 @@
                 </section>
 
                 <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-                    <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Durum Gecmisi</h2>
+                    <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Durum Geçmişi</h2>
                     <div class="mt-4 space-y-3">
                         @foreach ($quote->statusHistories->sortByDesc('created_at') as $history)
                             <div class="rounded-2xl bg-slate-50 px-4 py-4 text-sm dark:bg-slate-950">

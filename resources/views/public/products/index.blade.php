@@ -2,8 +2,8 @@
 
 @php use Illuminate\Support\Facades\Storage; @endphp
 
-@section('title', 'Urunler | Bilyam')
-@section('meta_description', 'Bilyam katalogunda rulman, filtre, burc, sanayi tekeri ve farkli endustriyel urunleri filtreleyerek inceleyin.')
+@section('title', 'Ürünler | Bilyam')
+@section('meta_description', 'Bilyam kataloğunda rulman, filtre, burç, sanayi tekeri ve farklı endüstriyel ürünleri filtreleyerek inceleyin.')
 @section('canonical', request()->fullUrl())
 
 @section('content')
@@ -14,12 +14,12 @@
                 <form method="GET" action="{{ route('products.index') }}" class="mt-6 space-y-5">
                     <div>
                         <label for="q" class="text-sm font-semibold text-slate-900 dark:text-white">Arama</label>
-                        <input id="q" type="text" name="q" value="{{ $search }}" placeholder="Urun adi, kategori, kod" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
+                        <input id="q" type="text" name="q" value="{{ $search }}" placeholder="Ürün adı, kategori, kod" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
                     </div>
                     <div>
                         <label for="category" class="text-sm font-semibold text-slate-900 dark:text-white">Kategori</label>
                         <select id="category" name="category" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                            <option value="">Tum kategoriler</option>
+                            <option value="">Tüm kategoriler</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->slug }}" @selected($selectedCategory === $category->slug)>{{ $category->name }}</option>
                             @endforeach
@@ -28,16 +28,16 @@
                     <div>
                         <label for="brand" class="text-sm font-semibold text-slate-900 dark:text-white">Marka</label>
                         <select id="brand" name="brand" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                            <option value="">Tum markalar</option>
+                            <option value="">Tüm markalar</option>
                             @foreach ($brands as $brand)
                                 <option value="{{ $brand->slug }}" @selected($selectedBrand === $brand->slug)>{{ $brand->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
-                        <label for="use_case" class="text-sm font-semibold text-slate-900 dark:text-white">Kullanim Alani</label>
+                        <label for="use_case" class="text-sm font-semibold text-slate-900 dark:text-white">Kullanım Alanı</label>
                         <select id="use_case" name="use_case" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                            <option value="">Tum kullanim alanlari</option>
+                            <option value="">Tüm kullanım alanları</option>
                             @foreach ($useCases as $useCase)
                                 <option value="{{ $useCase->slug }}" @selected($selectedUseCase === $useCase->slug)>{{ $useCase->name }}</option>
                             @endforeach
@@ -51,7 +51,7 @@
                                     <div>
                                         <label for="spec_{{ $filter['field']->id }}" class="text-sm font-semibold text-slate-900 dark:text-white">{{ $filter['field']->name }}</label>
                                         <select id="spec_{{ $filter['field']->id }}" name="spec[{{ $filter['field']->id }}]" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                                            <option value="">Tum degerler</option>
+                                            <option value="">Tüm değerler</option>
                                             @foreach($filter['values'] as $value)
                                                 <option value="{{ $value }}" @selected(($specificationFilters[$filter['field']->id] ?? null) === $value)>{{ $value }}</option>
                                             @endforeach
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                     @elseif($selectedCategory)
-                        <div class="rounded-2xl border border-dashed border-slate-300 px-4 py-4 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Bu kategori icin filtrelenebilir teknik alan tanimli degil.</div>
+                        <div class="rounded-2xl border border-dashed border-slate-300 px-4 py-4 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Bu kategori için filtrelenebilir teknik alan tanımlı değil.</div>
                     @endif
                     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                         <button type="submit" class="rounded-full bg-bilya-blue px-4 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Filtreyi Uygula</button>
@@ -73,15 +73,15 @@
             <div class="space-y-6">
                 <div class="flex flex-col gap-4 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900 lg:flex-row lg:items-end lg:justify-between">
                     <div>
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Urun Vitrini</p>
-                        <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Teknik urun katalogu</h1>
-                        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">Urun adi, kategori, urun kodu ve kullanim alanina gore arama yapabilir; coklu urunu teklif listenize ekleyebilirsiniz.</p>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Ürün Vitrini</p>
+                        <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Teknik ürün kataloğu</h1>
+                        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">Ürün adı, kategori, ürün kodu ve kullanım alanına göre arama yapabilir; çoklu ürünü teklif listenize ekleyebilirsiniz.</p>
                     </div>
-                    <div class="rounded-2xl bg-slate-100 px-4 py-3 text-sm text-slate-600 dark:bg-slate-950 dark:text-slate-300">{{ $products->total() }} urun bulundu</div>
+                    <div class="rounded-2xl bg-slate-100 px-4 py-3 text-sm text-slate-600 dark:bg-slate-950 dark:text-slate-300">{{ $products->total() }} ürün bulundu</div>
                 </div>
 
                 @if ($products->count() === 0)
-                    <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">Secilen filtrelerle eslesen urun bulunamadi. Farkli bir arama veya filtre deneyin.</div>
+                    <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">Seçilen filtrelerle eşleşen ürün bulunamadı. Farklı bir arama veya filtre deneyin.</div>
                 @else
                     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                         @foreach ($products as $product)
@@ -110,7 +110,7 @@
                                 </a>
                                 <div class="mt-5 flex items-center justify-between gap-3">
                                     <div>
-                                        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Liste Fiyati</p>
+                                        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Liste Fiyatı</p>
                                         <p class="text-lg font-semibold text-bilya-blue">{{ number_format((float) $product->price, 2, ',', '.') }} TL</p>
                                     </div>
                                     <form method="POST" action="{{ route('quote-list.store', $product) }}">

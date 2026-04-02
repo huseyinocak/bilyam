@@ -42,7 +42,7 @@ class SpecificationTemplateController extends Controller
 
         ActivityLogger::log('catalog.spec_template.created', $template, ['name' => $template->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Teknik ozellik sablonu olusturuldu.');
+        return back()->with('status', 'Teknik özellik şablonu oluşturuldu.');
     }
 
     public function update(Request $request, SpecificationTemplate $template): RedirectResponse
@@ -65,7 +65,7 @@ class SpecificationTemplateController extends Controller
 
         ActivityLogger::log('catalog.spec_template.updated', $template, ['name' => $template->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Teknik ozellik sablonu guncellendi.');
+        return back()->with('status', 'Teknik özellik şablonu güncellendi.');
     }
 
     public function destroy(Request $request, SpecificationTemplate $template): RedirectResponse
@@ -75,7 +75,7 @@ class SpecificationTemplateController extends Controller
 
         ActivityLogger::log('catalog.spec_template.deleted', null, ['name' => $name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Teknik ozellik sablonu silindi.');
+        return back()->with('status', 'Teknik özellik şablonu silindi.');
     }
 
     public function storeField(Request $request, SpecificationTemplate $template): RedirectResponse
@@ -102,7 +102,7 @@ class SpecificationTemplateController extends Controller
 
         ActivityLogger::log('catalog.spec_field.created', $field, ['name' => $field->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Teknik alan olusturuldu.');
+        return back()->with('status', 'Teknik alan oluşturuldu.');
     }
 
     public function updateField(Request $request, SpecificationTemplate $template, SpecificationField $field): RedirectResponse
@@ -131,7 +131,7 @@ class SpecificationTemplateController extends Controller
 
         ActivityLogger::log('catalog.spec_field.updated', $field, ['name' => $field->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Teknik alan guncellendi.');
+        return back()->with('status', 'Teknik alan güncellendi.');
     }
 
     public function destroyField(Request $request, SpecificationTemplate $template, SpecificationField $field): RedirectResponse

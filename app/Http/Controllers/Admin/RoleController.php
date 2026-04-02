@@ -33,7 +33,7 @@ class RoleController extends Controller
 
         ActivityLogger::log('auth.role.created', $role, ['name' => $role->name], $request->user()?->id, $request, 'auth');
 
-        return back()->with('status', 'Rol olusturuldu.');
+        return back()->with('status', 'Rol oluşturuldu.');
     }
 
     public function update(Request $request, Role $role): RedirectResponse
@@ -47,7 +47,7 @@ class RoleController extends Controller
 
         ActivityLogger::log('auth.role.updated', $role, ['name' => $role->name], $request->user()?->id, $request, 'auth');
 
-        return back()->with('status', 'Rol izinleri guncellendi.');
+        return back()->with('status', 'Rol izinleri güncellendi.');
     }
 
     public function destroy(Request $request, Role $role): RedirectResponse

@@ -43,7 +43,7 @@ class AdminAuthenticatedSessionController extends Controller
             RateLimiter::hit($key);
 
             throw ValidationException::withMessages([
-                'email' => 'Girilen bilgiler dogrulanamadi.',
+                'email' => 'Girilen bilgiler doğrulanamadı.',
             ]);
         }
 
@@ -52,7 +52,7 @@ class AdminAuthenticatedSessionController extends Controller
             RateLimiter::hit($key);
 
             throw ValidationException::withMessages([
-                'email' => 'Bu kullanici icin yonetim paneli yetkisi tanimli degil.',
+                'email' => 'Bu kullanıcı için yönetim paneli yetkisi tanımlı değil.',
             ]);
         }
 

@@ -59,7 +59,7 @@ class ProductController extends Controller
 
         ActivityLogger::log('catalog.product.created', $product, ['name' => $product->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Urun olusturuldu.');
+        return back()->with('status', 'Ürün oluşturuldu.');
     }
 
     public function update(Request $request, Product $product): RedirectResponse
@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         ActivityLogger::log('catalog.product.updated', $product, ['name' => $product->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Urun guncellendi.');
+        return back()->with('status', 'Ürün güncellendi.');
     }
 
     public function destroy(Request $request, Product $product): RedirectResponse
@@ -82,7 +82,7 @@ class ProductController extends Controller
 
         ActivityLogger::log('catalog.product.deleted', null, ['name' => $name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Urun silindi.');
+        return back()->with('status', 'Ürün silindi.');
     }
 
     public function destroyImage(Request $request, Product $product, ProductImage $image): RedirectResponse
@@ -106,7 +106,7 @@ class ProductController extends Controller
 
         ActivityLogger::log('catalog.product.image.deleted', $product, ['image_id' => $image->id], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Urun gorseli silindi.');
+        return back()->with('status', 'Ürün görseli silindi.');
     }
 
     public function makePrimaryImage(Request $request, Product $product, ProductImage $image): RedirectResponse
@@ -118,7 +118,7 @@ class ProductController extends Controller
 
         ActivityLogger::log('catalog.product.image.primary', $product, ['image_id' => $image->id], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Birincil gorsel guncellendi.');
+        return back()->with('status', 'Birincil görsel güncellendi.');
     }
 
     private function validatedData(Request $request, ?Product $product = null): array

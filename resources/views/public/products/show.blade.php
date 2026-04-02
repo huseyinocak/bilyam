@@ -3,7 +3,7 @@
 @php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', $product->name.' | Bilyam')
-@section('meta_description', $product->technical_summary ?: $product->short_description ?: 'Teknik urun detayi ve teklif talep ekrani.')
+@section('meta_description', $product->technical_summary ?: $product->short_description ?: 'Teknik ürün detayı ve teklif talep ekranı.')
 
 @section('content')
     <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Teknik Ozellikler</h2>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Teknik Özellikler</h2>
                     <div class="mt-5 grid gap-3">
                         @foreach ($product->specificationValues as $specification)
                             <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 text-sm dark:bg-slate-950">
@@ -50,7 +50,7 @@
                     <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{{ $product->description }}</p>
                     <div class="mt-6 grid gap-3 sm:grid-cols-2">
                         <div class="rounded-2xl bg-slate-50 p-4 dark:bg-slate-950">
-                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Urun Kodu</p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ürün Kodu</p>
                             <p class="mt-2 text-lg font-semibold text-slate-900 dark:text-white">{{ $product->code }}</p>
                         </div>
                         <div class="rounded-2xl bg-slate-50 p-4 dark:bg-slate-950">
@@ -61,7 +61,7 @@
                     <div class="mt-6 rounded-2xl border border-bilya-blue/20 bg-bilya-blue/5 p-4">
                         <p class="text-xs uppercase tracking-[0.2em] text-bilya-blue">Liste Fiyati</p>
                         <p class="mt-2 text-3xl font-semibold text-bilya-blue">{{ number_format((float) $product->price, 2, ',', '.') }} TL</p>
-                        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Bu fiyat bilgilendirme amaclidir. Toplu alim ve termin icin teklif talebi olusturabilirsiniz.</p>
+                        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Bu fiyat bilgilendirme amaçlıdır. Toplu alım ve termin için teklif talebi oluşturabilirsiniz.</p>
                     </div>
                     <div class="mt-6 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
                         @foreach ($product->useCases as $useCase)
@@ -82,10 +82,10 @@
     <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div class="flex items-end justify-between gap-4">
             <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-bilya-blue">Benzer Urunler</p>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-bilya-blue">Benzer Ürünler</p>
                 <h2 class="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">Ayni kategoride diger secenekler</h2>
             </div>
-            <a href="{{ route('products.index', ['category' => $product->category?->slug]) }}" class="text-sm font-semibold text-bilya-blue">Tumunu gor</a>
+            <a href="{{ route('products.index', ['category' => $product->category?->slug]) }}" class="text-sm font-semibold text-bilya-blue">Tümünü gör</a>
         </div>
         <div class="mt-8 grid gap-5 lg:grid-cols-4">
             @foreach ($relatedProducts as $relatedProduct)

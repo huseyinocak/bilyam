@@ -51,7 +51,7 @@ class QuoteListController extends Controller
 
         $request->session()->put('quote_list', $items);
 
-        return back()->with('status', 'Urun teklif listenize eklendi.');
+        return back()->with('status', 'Ürün teklif listenize eklendi.');
     }
 
     public function update(Request $request, Product $product): RedirectResponse
@@ -67,7 +67,7 @@ class QuoteListController extends Controller
             $request->session()->put('quote_list', $items);
         }
 
-        return back()->with('status', 'Teklif listeniz guncellendi.');
+        return back()->with('status', 'Teklif listeniz güncellendi.');
     }
 
     public function destroy(Request $request, Product $product): RedirectResponse
@@ -76,7 +76,7 @@ class QuoteListController extends Controller
         unset($items[$product->id]);
         $request->session()->put('quote_list', $items);
 
-        return back()->with('status', 'Urun teklif listenizden cikarildi.');
+        return back()->with('status', 'Ürün teklif listenizden çıkarıldı.');
     }
 
     public function submit(Request $request): RedirectResponse
@@ -85,7 +85,7 @@ class QuoteListController extends Controller
 
         if ($items === []) {
             return redirect()->route('quote-list.index')->withErrors([
-                'quote_list' => 'Teklif gonderebilmek icin en az bir urun eklemelisiniz.',
+                'quote_list' => 'Teklif gönderebilmek için en az bir ürün eklemelisiniz.',
             ]);
         }
 
@@ -127,7 +127,7 @@ class QuoteListController extends Controller
                 'user_id' => $request->user()?->id,
                 'from_status' => null,
                 'to_status' => 'new',
-                'note' => 'Public teklif formu uzerinden olusturuldu.',
+                'note' => 'Public teklif formu üzerinden oluşturuldu.',
             ]);
 
             ActivityLogger::log('quote.request.created', $quoteRequest, [
@@ -143,7 +143,7 @@ class QuoteListController extends Controller
 
         $request->session()->forget('quote_list');
 
-        return redirect()->route('quote-list.index')->with('status', 'Teklif talebiniz alindi. Operasyon ekibimiz kisa surede sizinle iletisime gececek.');
+        return redirect()->route('quote-list.index')->with('status', 'Teklif talebiniz alındı. Operasyon ekibimiz kısa sürede sizinle iletişime geçecek.');
     }
 
     private function rawItems(Request $request): array
