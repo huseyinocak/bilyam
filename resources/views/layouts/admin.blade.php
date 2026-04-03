@@ -36,6 +36,7 @@
                         <a href="{{ route('admin.users.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.users.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kullanicilar</a>
                         <a href="{{ route('admin.roles.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.roles.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Roller</a>
                         <a href="{{ route('admin.activity-logs.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.activity-logs.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Aktivite Loglari</a>
+                        <a href="{{ route('admin.settings.homepage-hero.edit') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.settings.homepage-hero.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Anasayfa Hero</a>
                     </div>
                 </div>
             </div>
