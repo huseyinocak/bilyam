@@ -12,4 +12,24 @@
     .panel-surface {
         @apply rounded-[2rem] border border-slate-200 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-900;
     }
+
+    .marketing-surface {
+        @apply rounded-[2rem] border border-slate-200 bg-white shadow-soft transition dark:border-slate-800 dark:bg-slate-900;
+    }
+
+    .soft-grid {
+        background-image: radial-gradient(circle at top right, rgba(30, 102, 245, 0.08), transparent 28%), radial-gradient(circle at bottom left, rgba(15, 23, 42, 0.06), transparent 24%);
+    }
+
+    .eyebrow {
+        @apply text-xs font-semibold uppercase tracking-[0.24em] text-slate-400;
+    }
+
+    .cta-primary {
+        @apply inline-flex items-center justify-center rounded-full bg-bilya-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy;
+    }
+
+    .cta-secondary {
+        @apply inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200;
+    }
 }

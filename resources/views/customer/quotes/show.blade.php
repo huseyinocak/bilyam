@@ -7,18 +7,18 @@
             </div>
             <form method="POST" action="{{ route('account.quotes.reorder', $quote) }}">
                 @csrf
-                <button type="submit" class="rounded-full bg-bilya-blue px-4 py-2 text-sm font-semibold text-white transition hover:bg-bilya-navy">Hızlı Tekrar Talep</button>
+                <button type="submit" class="cta-primary px-4 py-2">Hızlı Tekrar Talep</button>
             </form>
         </div>
     </x-slot>
 
     <div class="py-12">
         <div class="mx-auto grid max-w-7xl gap-6 sm:px-6 lg:grid-cols-[minmax(0,1.2fr)_360px] lg:px-8">
-            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <section class="marketing-surface p-6">
                 <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Teklif Kalemleri</h2>
                 <div class="mt-5 space-y-4">
                     @foreach ($quote->items as $item)
-                        <article class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-950">
+                        <article class="rounded-[1.5rem] bg-slate-50 p-5 dark:bg-slate-950">
                             <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div>
                                     <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $item->product_name }}</p>
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="rounded-2xl border border-slate-200 px-4 py-3 text-sm dark:border-slate-800">
                                         <p class="text-slate-500 dark:text-slate-400">Not</p>
-                                        <p class="mt-2 font-semibold text-slate-900 dark:text-white">{{ $item->responseItem->note ?: 'Aciklama yok' }}</p>
+                                        <p class="mt-2 font-semibold text-slate-900 dark:text-white">{{ $item->responseItem->note ?: 'Açıklama yok' }}</p>
                                     </div>
                                 </div>
                             @endif
@@ -53,7 +53,7 @@
             </section>
 
             <div class="space-y-6">
-                <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+                <section class="marketing-surface p-6">
                     <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Talep Özeti</h2>
                     <div class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
                         <div class="flex items-center justify-between"><span>Durum</span><span class="font-semibold text-slate-900 dark:text-white">{{ $quote->status }}</span></div>
@@ -63,11 +63,11 @@
                     </div>
                 </section>
 
-                <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+                <section class="marketing-surface p-6">
                     <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Durum Geçmişi</h2>
                     <div class="mt-4 space-y-3">
                         @foreach ($quote->statusHistories->sortByDesc('created_at') as $history)
-                            <div class="rounded-2xl bg-slate-50 px-4 py-4 text-sm dark:bg-slate-950">
+                            <div class="rounded-[1.5rem] bg-slate-50 px-4 py-4 text-sm dark:bg-slate-950">
                                 <p class="font-semibold text-slate-900 dark:text-white">{{ $history->to_status }}</p>
                                 <p class="mt-1 text-slate-500 dark:text-slate-400">{{ $history->created_at->format('d.m.Y H:i') }} @if($history->user) • {{ $history->user->name }} @endif</p>
                                 @if ($history->note)

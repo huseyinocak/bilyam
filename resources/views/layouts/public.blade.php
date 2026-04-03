@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('body')
-    <div class="min-h-screen">
+    <div class="min-h-screen" x-data="{ open: false }">
         <header class="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
             <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
                 <a href="{{ route('home') }}" class="flex items-center gap-3">
@@ -30,6 +30,21 @@
                     @else
                         <a href="{{ route('login') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Giriş Yap</a>
                     @endauth
+                    <button type="button" @click="open = ! open" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 lg:hidden">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div x-show="open" x-transition class="border-t border-slate-200 bg-white px-4 py-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden">
+                <div class="flex flex-col gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
+                    <a href="{{ route('home') }}#vitrin" @click="open = false">Ana Sayfa</a>
+                    <a href="{{ route('products.index') }}" @click="open = false">Ürünler</a>
+                    <a href="{{ route('home') }}#kategoriler" @click="open = false">Kategoriler</a>
+                    <a href="{{ route('home') }}#nasil-calisir" @click="open = false">Nasıl Çalışır</a>
+                    <a href="{{ route('quote-list.index') }}" @click="open = false">Teklif Listem</a>
                 </div>
             </div>
         </header>
