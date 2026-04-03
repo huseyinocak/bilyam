@@ -1,10 +1,10 @@
 <x-guest-layout>
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <div class="mb-6 space-y-2">
+    <div class="mb-8 space-y-3">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Müşteri Girişi</p>
-        <h1 class="text-3xl font-semibold text-slate-900 dark:text-white">Hesabiniza giris yapin</h1>
-        <p class="text-sm text-slate-600 dark:text-slate-300">Tekliflerinizi takip etmek, profilinizi yonetmek ve tekrar talep olusturmak icin giris yapin.</p>
+        <h1 class="text-3xl font-semibold text-slate-900 dark:text-white">Hesabınıza giriş yapın</h1>
+        <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">Tekliflerinizi takip etmek, profilinizi yönetmek ve tekrar talep oluşturmak için giriş yapın.</p>
     </div>
 
     <form method="POST" action="{{ route('login') }}">
@@ -31,7 +31,7 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-bilya-blue shadow-sm focus:ring-bilya-blue" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-slate-300">Beni hatirla</span>
+                <span class="ms-2 text-sm text-gray-600 dark:text-slate-300">Beni hatırla</span>
             </label>
         </div>
 
