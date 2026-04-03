@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\AdminAuthenticatedSessionController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\HomepageHeroController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\QuoteController;
 use App\Http\Controllers\Admin\RoleController;
@@ -96,6 +97,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::middleware('can:activity_logs.view')->group(function () {
             Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
+        });
+
+        Route::middleware('can:settings.homepage.manage')->group(function () {
+            Route::get('/settings/homepage-hero', [HomepageHeroController::class, 'edit'])->name('settings.homepage-hero.edit');
+            Route::match(['put', 'patch'], '/settings/homepage-hero', [HomepageHeroController::class, 'update'])->name('settings.homepage-hero.update');
         });
 
         Route::post('/logout', [AdminAuthenticatedSessionController::class, 'destroy'])->name('logout');
