@@ -12,7 +12,7 @@
                 </div>
                 <form method="GET" action="{{ route('admin.quotes.index') }}" class="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
                     <select name="status" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                        <option value="">Tum durumlar</option>
+                        <option value="">Tüm durumlar</option>
                         @foreach ($statuses as $key => $label)
                             <option value="{{ $key }}" @selected($filters['status'] === $key)>{{ $label }}</option>
                         @endforeach

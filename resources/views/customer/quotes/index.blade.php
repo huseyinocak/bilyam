@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Musteri Paneli</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Müşteri Paneli</p>
             <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Tekliflerim</h1>
         </div>
     </x-slot>
@@ -12,7 +12,7 @@
                 <form method="GET" action="{{ route('account.quotes.index') }}" class="grid gap-4 lg:grid-cols-5">
                     <input type="text" name="quote_no" value="{{ $filters['quoteNo'] }}" placeholder="Teklif no" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
                     <select name="status" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                        <option value="">Tum durumlar</option>
+                        <option value="">Tüm durumlar</option>
                         @foreach ($statuses as $key => $label)
                             <option value="{{ $key }}" @selected($filters['status'] === $key)>{{ $label }}</option>
                         @endforeach
@@ -25,7 +25,7 @@
 
             <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
                 @if ($quotes->count() === 0)
-                    <div class="rounded-2xl border border-dashed border-slate-300 px-6 py-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Henuz hesabiniza bagli teklif bulunmuyor.</div>
+                    <div class="rounded-2xl border border-dashed border-slate-300 px-6 py-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Henüz hesabınıza bağlı teklif bulunmuyor.</div>
                 @else
                     <div class="space-y-3">
                         @foreach ($quotes as $quote)

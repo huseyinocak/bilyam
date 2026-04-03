@@ -4,7 +4,7 @@
             <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
                 <x-application-logo class="h-10 w-auto" />
                 <div class="hidden sm:block">
-                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Musteri Paneli</p>
+                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Müşteri Paneli</p>
                     <p class="text-sm font-semibold text-slate-900 dark:text-white">Bilyam</p>
                 </div>
             </a>

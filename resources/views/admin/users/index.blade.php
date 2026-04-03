@@ -12,8 +12,8 @@
                 <input type="email" name="email" placeholder="E-posta" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
                 <input type="text" name="phone" placeholder="Telefon" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
                 <select name="user_type" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"><option value="customer">Customer</option><option value="admin">Admin</option></select>
-                <input type="password" name="password" placeholder="Sifre" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
-                <input type="password" name="password_confirmation" placeholder="Sifre tekrari" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
+                <input type="password" name="password" placeholder="Şifre" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
+                <input type="password" name="password_confirmation" placeholder="Şifre tekrarı" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
                 <select name="role_names[]" multiple class="lg:col-span-3 rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">@foreach($roles as $role)<option value="{{ $role->name }}">{{ $role->name }}</option>@endforeach</select>
                 <button type="submit" class="lg:col-span-3 rounded-full bg-bilya-blue px-4 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Kullanici Ekle</button>
             </form>
@@ -27,8 +27,8 @@
                         <input type="email" name="email" value="{{ $user->email }}" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
                         <input type="text" name="phone" value="{{ $user->phone }}" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
                         <select name="user_type" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"><option value="customer" @selected($user->user_type==='customer')>Customer</option><option value="admin" @selected($user->user_type==='admin')>Admin</option></select>
-                        <input type="password" name="password" placeholder="Yeni sifre (opsiyonel)" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-                        <input type="password" name="password_confirmation" placeholder="Sifre tekrari" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
+                        <input type="password" name="password" placeholder="Yeni şifre (opsiyonel)" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
+                        <input type="password" name="password_confirmation" placeholder="Şifre tekrarı" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
                         <select name="role_names[]" multiple class="lg:col-span-3 rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">@foreach($roles as $role)<option value="{{ $role->name }}" @selected($user->roles->contains('name', $role->name))>{{ $role->name }}</option>@endforeach</select>
                         <div class="lg:col-span-3 flex items-center gap-3">
                             <button type="submit" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">Kaydet</button>

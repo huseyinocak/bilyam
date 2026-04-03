@@ -9,8 +9,8 @@
             <div class="space-y-6">
                 <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
                     <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Teklif Listem</p>
-                    <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Sectiginiz urunleri tek talepte toplayin</h1>
-                    <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Bu liste siparis sepeti degildir. Urun bazinda adet belirtip iletisim bilgilerinizle teklif talebi olusturabilirsiniz.</p>
+                    <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Seçtiğiniz ürünleri tek talepte toplayın</h1>
+                    <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Bu liste sipariş sepeti değildir. Ürün bazında adet belirtip iletişim bilgilerinizle teklif talebi oluşturabilirsiniz.</p>
                 </div>
 
                 @error('quote_list')
@@ -20,8 +20,8 @@
                 @if ($items === [])
                     <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center dark:border-slate-700 dark:bg-slate-900">
                         <p class="text-lg font-semibold text-slate-900 dark:text-white">Teklif listeniz su an bos.</p>
-                        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Kataloga donup urun eklediginizde bu ekranda toplam teklif talebinizi gonderebilirsiniz.</p>
-                        <a href="{{ route('products.index') }}" class="mt-6 inline-flex rounded-full bg-bilya-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Kataloga Don</a>
+                        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Kataloğa dönüp ürün eklediğinizde bu ekranda toplam teklif talebinizi gönderebilirsiniz.</p>
+                        <a href="{{ route('products.index') }}" class="mt-6 inline-flex rounded-full bg-bilya-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Kataloğa Dön</a>
                     </div>
                 @else
                     <div class="space-y-4">
@@ -39,7 +39,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <input type="number" name="quantity" min="1" value="{{ $item['quantity'] }}" class="w-24 rounded-full border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
-                                            <button type="submit" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Guncelle</button>
+                                            <button type="submit" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Güncelle</button>
                                         </form>
                                         <form method="POST" action="{{ route('quote-list.destroy', $item['product']) }}">
                                             @csrf
@@ -57,7 +57,7 @@
             <div>
                 <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900 lg:sticky lg:top-24">
                     <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Teklif Talep Formu</h2>
-                    <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Misafir olarak devam edebilir veya uye girisi ile teklif gecmisinizi hesabinizda saklayabilirsiniz.</p>
+                    <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Misafir olarak devam edebilir veya üye girişi ile teklif geçmişinizi hesabınızda saklayabilirsiniz.</p>
                     <form method="POST" action="{{ route('quote-list.submit') }}" class="mt-6 space-y-4">
                         @csrf
                         <div>
@@ -86,8 +86,8 @@
                             <label class="text-sm font-semibold text-slate-900 dark:text-white">Notunuz</label>
                             <textarea name="note" rows="5" class="mt-2 block w-full rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" placeholder="Termin, miktar veya teknik beklentinizi yazabilirsiniz.">{{ old('note') }}</textarea>
                         </div>
-                        <div class="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:bg-slate-950 dark:text-slate-300">Toplam {{ $totalItems }} kalem urun icin teklif talebi olusturulacak.</div>
-                        <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-bilya-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Teklif Talebini Gonder</button>
+                        <div class="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:bg-slate-950 dark:text-slate-300">Toplam {{ $totalItems }} kalem ürün için teklif talebi oluşturulacak.</div>
+                        <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-bilya-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Teklif Talebini Gönder</button>
                     </form>
                 </div>
             </div>

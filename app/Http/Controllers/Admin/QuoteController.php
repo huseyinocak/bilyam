@@ -87,10 +87,10 @@ class QuoteController extends Controller
         $quote->load('items.responseItem');
 
         if ($quote->fresh(['items.responseItem'])->is_fully_responded && $quote->status !== 'responded') {
-            $this->transitionStatus($quote, 'responded', $request->user()?->id, 'Tum satirlar yanitlandigi icin durum otomatik guncellendi.');
+            $this->transitionStatus($quote, 'responded', $request->user()?->id, 'Tüm satırlar yanıtlandığı için durum otomatik güncellendi.');
         }
 
-        return back()->with('status', 'Teklif satiri guncellendi.');
+        return back()->with('status', 'Teklif satırı güncellendi.');
     }
 
     public function updateStatus(Request $request, QuoteRequest $quote): RedirectResponse
@@ -102,7 +102,7 @@ class QuoteController extends Controller
 
         if ($validated['status'] === 'responded' && ! $quote->fresh(['items.responseItem'])->is_fully_responded) {
             return back()->withErrors([
-                'status' => 'Tum teklif satirlari yanitlanmadan durum cevaplandi olarak guncellenemez.',
+                'status' => 'Tüm teklif satırları yanıtlanmadan durum cevaplandı olarak güncellenemez.',
             ]);
         }
 
@@ -116,7 +116,7 @@ class QuoteController extends Controller
             Mail::to($quote->requester_email)->queue(new QuoteRespondedMail($quote->fresh('items.responseItem')));
         }
 
-        return back()->with('status', 'Teklif durumu guncellendi.');
+        return back()->with('status', 'Teklif durumu güncellendi.');
     }
 
     private function transitionStatus(QuoteRequest $quote, string $toStatus, ?int $userId, ?string $note = null): void
@@ -139,7 +139,7 @@ class QuoteController extends Controller
     {
         return [
             'new' => 'Yeni',
-            'in_review' => 'Inceleniyor',
+            'in_review' => 'İnceleniyor',
             'responded' => 'Cevaplandi',
             'closed' => 'Kapatildi',
         ];

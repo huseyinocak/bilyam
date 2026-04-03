@@ -37,7 +37,7 @@ class UseCaseController extends Controller
 
         ActivityLogger::log('catalog.use_case.created', $useCase, ['name' => $useCase->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Kullanim alani olusturuldu.');
+        return back()->with('status', 'Kullanım alanı oluşturuldu.');
     }
 
     public function update(Request $request, UseCase $useCase): RedirectResponse
@@ -58,7 +58,7 @@ class UseCaseController extends Controller
 
         ActivityLogger::log('catalog.use_case.updated', $useCase, ['name' => $useCase->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Kullanim alani guncellendi.');
+        return back()->with('status', 'Kullanım alanı güncellendi.');
     }
 
     public function destroy(Request $request, UseCase $useCase): RedirectResponse
@@ -68,6 +68,6 @@ class UseCaseController extends Controller
 
         ActivityLogger::log('catalog.use_case.deleted', null, ['name' => $name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Kullanim alani silindi.');
+        return back()->with('status', 'Kullanım alanı silindi.');
     }
 }

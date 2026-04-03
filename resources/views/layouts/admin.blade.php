@@ -23,15 +23,15 @@
                 <div>
                     <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Katalog</p>
                     <div class="space-y-2">
-                        <a href="{{ route('admin.products.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.products.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Urunler</a>
+                        <a href="{{ route('admin.products.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.products.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Ürünler</a>
                         <a href="{{ route('admin.categories.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.categories.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kategoriler</a>
                         <a href="{{ route('admin.brands.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.brands.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Markalar</a>
-                        <a href="{{ route('admin.use-cases.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.use-cases.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kullanim Alanlari</a>
-                        <a href="{{ route('admin.specification-templates.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.specification-templates.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Teknik Ozellikler</a>
+                        <a href="{{ route('admin.use-cases.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.use-cases.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kullanım Alanları</a>
+                        <a href="{{ route('admin.specification-templates.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.specification-templates.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Teknik Özellikler</a>
                     </div>
                 </div>
                 <div>
-                    <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Yonetim</p>
+                    <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Yönetim</p>
                     <div class="space-y-2">
                         <a href="{{ route('admin.users.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.users.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kullanicilar</a>
                         <a href="{{ route('admin.roles.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.roles.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Roller</a>

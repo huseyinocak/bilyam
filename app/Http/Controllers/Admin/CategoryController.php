@@ -39,7 +39,7 @@ class CategoryController extends Controller
 
         ActivityLogger::log('catalog.category.created', $category, ['name' => $category->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Kategori olusturuldu.');
+        return back()->with('status', 'Kategori oluşturuldu.');
     }
 
     public function update(Request $request, Category $category): RedirectResponse
@@ -62,7 +62,7 @@ class CategoryController extends Controller
 
         ActivityLogger::log('catalog.category.updated', $category, ['name' => $category->name], $request->user()?->id, $request, 'catalog');
 
-        return back()->with('status', 'Kategori guncellendi.');
+        return back()->with('status', 'Kategori güncellendi.');
     }
 
     public function destroy(Request $request, Category $category): RedirectResponse

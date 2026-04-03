@@ -2,8 +2,8 @@
     <x-slot name="header">
         <div class="flex items-center justify-between gap-4">
             <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Musteri Paneli</p>
-                <h2 class="text-2xl font-semibold leading-tight text-slate-900 dark:text-white">Teklifleriniz ve hesap ozetiniz</h2>
+                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Müşteri Paneli</p>
+                <h2 class="text-2xl font-semibold leading-tight text-slate-900 dark:text-white">Teklifleriniz ve hesap özetiniz</h2>
             </div>
             <a href="{{ route('home') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Siteye Don</a>
         </div>

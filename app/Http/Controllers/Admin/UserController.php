@@ -52,7 +52,7 @@ class UserController extends Controller
 
         ActivityLogger::log('auth.user.created', $user, ['email' => $user->email], $request->user()?->id, $request, 'auth');
 
-        return back()->with('status', 'Kullanici olusturuldu.');
+        return back()->with('status', 'Kullanıcı oluşturuldu.');
     }
 
     public function update(Request $request, User $user): RedirectResponse
@@ -83,7 +83,7 @@ class UserController extends Controller
 
         ActivityLogger::log('auth.user.updated', $user, ['email' => $user->email], $request->user()?->id, $request, 'auth');
 
-        return back()->with('status', 'Kullanici guncellendi.');
+        return back()->with('status', 'Kullanıcı güncellendi.');
     }
 
     public function destroy(Request $request, User $user): RedirectResponse
@@ -95,6 +95,6 @@ class UserController extends Controller
 
         ActivityLogger::log('auth.user.deleted', null, ['email' => $email], $request->user()?->id, $request, 'auth');
 
-        return back()->with('status', 'Kullanici silindi.');
+        return back()->with('status', 'Kullanıcı silindi.');
     }
 }

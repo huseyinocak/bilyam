@@ -2,21 +2,21 @@
 
 @php use Illuminate\Support\Facades\Storage; @endphp
 
-@section('title', 'Urunler | Bilyam')
+@section('title', 'Ürünler | Bilyam')
 
 @section('content')
     <div class="space-y-6">
         <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
             <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                    <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Urunler</h1>
-                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Urunleri listeleyin, filtreleyin ve duzenleme ekranina gecin.</p>
+                    <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Ürünler</h1>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Ürünleri listeleyin, filtreleyin ve düzenleme ekranına geçin.</p>
                 </div>
                 <div class="flex flex-col gap-3 sm:flex-row">
                     <form method="GET" action="{{ route('admin.products.index') }}">
-                        <input type="text" name="q" value="{{ $search }}" placeholder="Urun adi veya kod" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
+                        <input type="text" name="q" value="{{ $search }}" placeholder="Ürün adı veya kod" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
                     </form>
-                    <a href="{{ route('admin.products.create') }}" class="rounded-full bg-bilya-blue px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-bilya-navy">Yeni Urun</a>
+                    <a href="{{ route('admin.products.create') }}" class="rounded-full bg-bilya-blue px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-bilya-navy">Yeni Ürün</a>
                 </div>
             </div>
         </section>
@@ -41,8 +41,8 @@
                             </div>
                         </div>
                         <div class="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-                            <span class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 dark:border-slate-700 dark:text-slate-300">{{ $product->images->count() }} gorsel</span>
-                            <a href="{{ route('admin.products.edit', $product) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Duzenle</a>
+                            <span class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 dark:border-slate-700 dark:text-slate-300">{{ $product->images->count() }} görsel</span>
+                            <a href="{{ route('admin.products.edit', $product) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Düzenle</a>
                             <form method="POST" action="{{ route('admin.products.destroy', $product) }}">
                                 @csrf @method('DELETE')
                                 <button type="submit" class="rounded-full border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600">Sil</button>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             @empty
-                <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">Aradiginiz kriterlere uygun urun yok.</div>
+                <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">Aradığınız kriterlere uygun ürün yok.</div>
             @endforelse
 
             <div>{{ $products->links() }}</div>

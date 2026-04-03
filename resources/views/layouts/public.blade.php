@@ -7,15 +7,15 @@
                 <a href="{{ route('home') }}" class="flex items-center gap-3">
                     <x-application-logo class="h-11 w-auto" />
                     <div class="hidden sm:block">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Teknik Urun Platformu</p>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Teknik Ürün Platformu</p>
                         <p class="text-sm font-semibold text-slate-900 dark:text-white">Bilyam</p>
                     </div>
                 </a>
                 <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex dark:text-slate-300">
                     <a href="{{ route('home') }}#vitrin" class="transition hover:text-bilya-blue">Ana Sayfa</a>
-                    <a href="{{ route('products.index') }}" class="transition hover:text-bilya-blue {{ request()->routeIs('products.*') ? 'text-bilya-blue' : '' }}">Urunler</a>
-                    <a href="#akis" class="transition hover:text-bilya-blue">Teklif Akisi</a>
-                    <a href="#yonetim" class="transition hover:text-bilya-blue">Yonetim</a>
+                    <a href="{{ route('products.index') }}" class="transition hover:text-bilya-blue {{ request()->routeIs('products.*') ? 'text-bilya-blue' : '' }}">Ürünler</a>
+                    <a href="{{ route('home') }}#kategoriler" class="transition hover:text-bilya-blue">Kategoriler</a>
+                    <a href="{{ route('home') }}#nasil-calisir" class="transition hover:text-bilya-blue">Nasıl Çalışır</a>
                 </nav>
                 <div class="flex items-center gap-3">
                     <a href="{{ route('quote-list.index') }}" class="relative rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">
@@ -28,8 +28,7 @@
                     @auth
                         <a href="{{ route('dashboard') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Panel</a>
                     @else
-                        <a href="{{ route('login') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Giris Yap</a>
-                        <a href="{{ route('register') }}" class="rounded-full bg-bilya-blue px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-bilya-navy">Kayit Ol</a>
+                        <a href="{{ route('login') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Giriş Yap</a>
                     @endauth
                 </div>
             </div>

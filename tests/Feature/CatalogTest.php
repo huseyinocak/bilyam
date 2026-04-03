@@ -18,7 +18,7 @@ class CatalogTest extends TestCase
         $response = $this->get(route('products.index'));
 
         $response->assertOk();
-        $response->assertSee('Teknik urun katalogu');
+        $response->assertSee('Teknik ürün kataloğu');
     }
 
     public function test_product_detail_page_can_be_rendered(): void
