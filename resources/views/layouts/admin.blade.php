@@ -33,9 +33,9 @@
                 <div>
                     <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Yönetim</p>
                     <div class="space-y-2">
-                        <a href="{{ route('admin.users.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.users.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kullanicilar</a>
+                        <a href="{{ route('admin.users.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.users.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Kullanıcılar</a>
                         <a href="{{ route('admin.roles.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.roles.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Roller</a>
-                        <a href="{{ route('admin.activity-logs.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.activity-logs.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Aktivite Loglari</a>
+                        <a href="{{ route('admin.activity-logs.index') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.activity-logs.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Aktivite Logları</a>
                         <a href="{{ route('admin.settings.homepage-hero.edit') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.settings.homepage-hero.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">Anasayfa Hero</a>
                         <a href="{{ route('admin.settings.contact.edit') }}" class="block rounded-2xl px-4 py-3 transition hover:bg-white/5 {{ request()->routeIs('admin.settings.contact.*') ? 'bg-white/10 text-white' : 'text-slate-300' }}">İletişim Ayarları</a>
                     </div>
@@ -43,7 +43,7 @@
             </div>
             <form method="POST" action="{{ route('admin.logout') }}" class="mt-10">
                 @csrf
-                <button type="submit" class="w-full rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/5">Guvenli Cikis</button>
+                <button type="submit" class="w-full rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/5">Güvenli Çıkış</button>
             </form>
         </aside>
         <main class="px-4 py-8 sm:px-6 lg:px-10">

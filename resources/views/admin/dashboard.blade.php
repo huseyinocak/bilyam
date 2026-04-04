@@ -10,7 +10,7 @@
                     <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Operasyon Özeti</p>
                     <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Teklif operasyonu icin hazir admin omurgasi</h1>
                 </div>
-                <p class="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">Sprint 1 bu paneli iskelet halinde ayirir. Sprint 3 ile teklif talepleri, satir bazli fiyatlama ve katalog kalite sinyalleri baglanacak.</p>
+                <p class="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">Bu panel teklif talepleri, satır bazlı fiyatlama ve katalog kalite sinyallerini tek merkezde toplar.</p>
             </div>
         </section>
 
@@ -28,17 +28,17 @@
                 <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Sprint 1 Hazirlanan Moduller</h2>
                 <div class="mt-4 grid gap-3 text-sm text-slate-600 dark:text-slate-300">
                     <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Admin login sayfasi ve yetki kontrolu</div>
-                    <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Role tabanli kullanici omurgasi</div>
-                    <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Katalog, teklif ve sistem tablolari</div>
-                    <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Public ve musteri panelleriyle ayrik route yapisi</div>
+                    <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Role tabanlı kullanıcı omurgası</div>
+                    <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Katalog, teklif ve sistem tabloları</div>
+                    <div class="rounded-2xl bg-slate-50 px-4 py-4 dark:bg-slate-950">Public ve müşteri panelleriyle ayrık route yapısı</div>
                 </div>
             </article>
             <article class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-                <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Sonraki Baglantilar</h2>
+                <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Sonraki Bağlantılar</h2>
                 <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                    <li>Teklif listesi ve detay ekranlari</li>
-                    <li>Kategori, marka ve urun CRUD modulleri</li>
-                    <li>Durum dagilimi ve son hareketler</li>
+                    <li>Teklif listesi ve detay ekranları</li>
+                    <li>Kategori, marka ve ürün CRUD modülleri</li>
+                    <li>Durum dağılımı ve son hareketler</li>
                     <li>Kalite ve eksik veri sinyalleri</li>
                 </ul>
             </article>

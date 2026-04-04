@@ -57,7 +57,7 @@ class RoleController extends Controller
         }
 
         if ($role->users()->exists()) {
-            return back()->withErrors(['role' => 'Kullanici atamasi olan rol silinemez.']);
+            return back()->withErrors(['role' => 'Kullanıcı ataması olan rol silinemez.']);
         }
 
         $name = $role->name;

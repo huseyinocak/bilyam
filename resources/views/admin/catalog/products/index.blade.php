@@ -37,7 +37,7 @@
                                 <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{{ $product->category?->name }}</p>
                                 <h2 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">{{ $product->name }}</h2>
                                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ $product->code }} @if($product->brand) • {{ $product->brand->name }} @endif</p>
-                                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">{{ $product->technical_summary ?: $product->short_description ?: 'Teknik ozet girilmemis.' }}</p>
+                                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">{{ $product->technical_summary ?: $product->short_description ?: 'Teknik özet girilmemiş.' }}</p>
                             </div>
                         </div>
                         <div class="flex flex-col items-start gap-3 sm:flex-row sm:items-center">

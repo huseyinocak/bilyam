@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', 'Kullanicilar | Bilyam')
+@section('title', 'Kullanıcılar | Bilyam')
 
 @section('content')
     <div class="space-y-6">
         <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-            <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Kullanicilar</h1>
+            <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Kullanıcılar</h1>
             <form method="POST" action="{{ route('admin.users.store') }}" class="mt-6 grid gap-4 lg:grid-cols-3">
                 @csrf
                 <input type="text" name="name" placeholder="Ad Soyad" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
@@ -15,7 +15,7 @@
                 <input type="password" name="password" placeholder="Şifre" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
                 <input type="password" name="password_confirmation" placeholder="Şifre tekrarı" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white" required>
                 <select name="role_names[]" multiple class="lg:col-span-3 rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">@foreach($roles as $role)<option value="{{ $role->name }}">{{ $role->name }}</option>@endforeach</select>
-                <button type="submit" class="lg:col-span-3 rounded-full bg-bilya-blue px-4 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Kullanici Ekle</button>
+                <button type="submit" class="lg:col-span-3 rounded-full bg-bilya-blue px-4 py-3 text-sm font-semibold text-white transition hover:bg-bilya-navy">Kullanıcı Ekle</button>
             </form>
         </section>
         <section class="space-y-4">
