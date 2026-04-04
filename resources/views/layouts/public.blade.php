@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('body')
-    <div class="min-h-screen" x-data="{ open: false }">
+    <div class="min-h-screen overflow-x-hidden" x-data="{ open: false, dark: document.documentElement.classList.contains('dark') }">
         <div class="border-b border-slate-200 bg-slate-950 text-white dark:border-slate-800">
             <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-xs font-medium sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
                 <div class="flex flex-wrap items-center gap-3 text-slate-200">
@@ -29,18 +29,24 @@
                     <a href="{{ route('home') }}#kategoriler" class="transition hover:text-bilya-blue">Kategoriler</a>
                     <a href="{{ route('home') }}#nasil-calisir" class="transition hover:text-bilya-blue">Nasıl Çalışır</a>
                 </nav>
-                <div class="flex items-center gap-3">
-                    <a href="{{ route('quote-list.index') }}" class="relative rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="{{ route('quote-list.index') }}" class="relative hidden rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 sm:inline-flex">
                         Teklif Listem
                         @if(($quoteListCount ?? 0) > 0)
                             <span class="absolute -right-2 -top-2 inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-bilya-blue px-1 text-xs font-bold text-white">{{ $quoteListCount }}</span>
                         @endif
                     </a>
-                    <button type="button" x-data @click="localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'light' : 'dark'); document.documentElement.classList.toggle('dark')" class="rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Tema</button>
+                    <a href="{{ route('quote-list.index') }}" class="relative inline-flex h-11 items-center justify-center rounded-full border border-slate-300 px-4 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 sm:hidden">
+                        Teklif
+                        @if(($quoteListCount ?? 0) > 0)
+                            <span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-bilya-blue px-1 text-[10px] font-bold text-white">{{ $quoteListCount }}</span>
+                        @endif
+                    </a>
+                    <button type="button" x-data @click="localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'light' : 'dark'); document.documentElement.classList.toggle('dark'); dark = document.documentElement.classList.contains('dark')" class="hidden rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 sm:inline-flex">Tema</button>
                     @auth
-                        <a href="{{ route('dashboard') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Panel</a>
+                        <a href="{{ route('dashboard') }}" class="hidden rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 sm:inline-flex">Panel</a>
                     @else
-                        <a href="{{ route('login') }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200">Giriş Yap</a>
+                        <a href="{{ route('login') }}" class="hidden rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 sm:inline-flex">Giriş Yap</a>
                     @endauth
                     <button type="button" @click="open = ! open" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 lg:hidden">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,6 +63,12 @@
                     <a href="{{ route('home') }}#kategoriler" @click="open = false">Kategoriler</a>
                     <a href="{{ route('home') }}#nasil-calisir" @click="open = false">Nasıl Çalışır</a>
                     <a href="{{ route('quote-list.index') }}" @click="open = false">Teklif Listem</a>
+                    @auth
+                        <a href="{{ route('dashboard') }}" @click="open = false">Panel</a>
+                    @else
+                        <a href="{{ route('login') }}" @click="open = false">Giriş Yap</a>
+                    @endauth
+                    <button type="button" @click="localStorage.setItem('theme', dark ? 'light' : 'dark'); document.documentElement.classList.toggle('dark'); dark = !dark" class="text-left">Tema Değiştir</button>
                 </div>
             </div>
         </header>
