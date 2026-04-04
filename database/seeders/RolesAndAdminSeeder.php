@@ -31,6 +31,7 @@ class RolesAndAdminSeeder extends Seeder
             'roles.manage',
             'activity_logs.view',
             'settings.homepage.manage',
+            'settings.contact.manage',
         ];
 
         foreach ($permissions as $permission) {
@@ -59,6 +60,7 @@ class RolesAndAdminSeeder extends Seeder
             'catalog.use_cases.manage',
             'catalog.specifications.manage',
             'settings.homepage.manage',
+            'settings.contact.manage',
         ]);
         Role::findByName('customer', 'web')->syncPermissions([]);
 

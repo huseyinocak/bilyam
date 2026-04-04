@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ActivityLogController;
 use App\Http\Controllers\Admin\Auth\AdminAuthenticatedSessionController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactSettingsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomepageHeroController;
 use App\Http\Controllers\Admin\ProductController;
@@ -102,6 +103,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::middleware('can:settings.homepage.manage')->group(function () {
             Route::get('/settings/homepage-hero', [HomepageHeroController::class, 'edit'])->name('settings.homepage-hero.edit');
             Route::match(['put', 'patch'], '/settings/homepage-hero', [HomepageHeroController::class, 'update'])->name('settings.homepage-hero.update');
+        });
+
+        Route::middleware('can:settings.contact.manage')->group(function () {
+            Route::get('/settings/contact', [ContactSettingsController::class, 'edit'])->name('settings.contact.edit');
+            Route::match(['put', 'patch'], '/settings/contact', [ContactSettingsController::class, 'update'])->name('settings.contact.update');
         });
 
         Route::post('/logout', [AdminAuthenticatedSessionController::class, 'destroy'])->name('logout');

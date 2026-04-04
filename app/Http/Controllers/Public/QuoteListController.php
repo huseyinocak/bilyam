@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\QuoteItem;
 use App\Models\QuoteRequest;
 use App\Models\QuoteStatusHistory;
+use App\Models\Setting;
 use App\Support\ActivityLogger;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -139,7 +140,9 @@ class QuoteListController extends Controller
         });
 
         Mail::to($quoteRequest->requester_email)->queue(new QuoteRequestReceivedMail($quoteRequest));
-        Mail::to(env('ADMIN_NOTIFICATION_EMAIL', 'admin@bilyam.test'))->queue(new AdminNewQuoteNotificationMail($quoteRequest));
+        $quoteRecipient = Setting::getValue('quote.notification.email', env('QUOTE_NOTIFICATION_EMAIL', env('ADMIN_NOTIFICATION_EMAIL', 'admin@bilyam.test')));
+
+        Mail::to($quoteRecipient)->queue(new AdminNewQuoteNotificationMail($quoteRequest));
 
         $request->session()->forget('quote_list');
 
