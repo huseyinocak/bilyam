@@ -27,7 +27,7 @@
                     <a href="{{ route('home') }}#vitrin" class="transition hover:text-bilya-blue">Ana Sayfa</a>
                     <a href="{{ route('products.index') }}" class="transition hover:text-bilya-blue {{ request()->routeIs('products.*') ? 'text-bilya-blue' : '' }}">Ürünler</a>
                     <a href="{{ route('home') }}#kategoriler" class="transition hover:text-bilya-blue">Kategoriler</a>
-                    <a href="{{ route('home') }}#nasil-calisir" class="transition hover:text-bilya-blue">Nasıl Çalışır</a>
+                    <a href="{{ route('contact.index') }}" class="transition hover:text-bilya-blue {{ request()->routeIs('contact.*') ? 'text-bilya-blue' : '' }}">İletişim</a>
                 </nav>
                 <div class="flex items-center gap-2 sm:gap-3">
                     <a href="{{ route('quote-list.index') }}" class="relative hidden rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-bilya-blue hover:text-bilya-blue dark:border-slate-700 dark:text-slate-200 sm:inline-flex">
@@ -61,7 +61,7 @@
                     <a href="{{ route('home') }}#vitrin" @click="open = false">Ana Sayfa</a>
                     <a href="{{ route('products.index') }}" @click="open = false">Ürünler</a>
                     <a href="{{ route('home') }}#kategoriler" @click="open = false">Kategoriler</a>
-                    <a href="{{ route('home') }}#nasil-calisir" @click="open = false">Nasıl Çalışır</a>
+                    <a href="{{ route('contact.index') }}" @click="open = false">İletişim</a>
                     <a href="{{ route('quote-list.index') }}" @click="open = false">Teklif Listem</a>
                     @auth
                         <a href="{{ route('dashboard') }}" @click="open = false">Panel</a>
