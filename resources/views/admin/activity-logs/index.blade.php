@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', 'Aktivite Loglari | Bilyam')
+@section('title', 'Aktivite Logları | Bilyam')
 
 @section('content')
     <div class="space-y-6">
         <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
             <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                    <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Aktivite Loglari</h1>
+                    <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">Aktivite Logları</h1>
                     <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Auth, teklif ve katalog uzerindeki kritik olaylar burada izlenir.</p>
                 </div>
                 <form method="GET" action="{{ route('admin.activity-logs.index') }}">

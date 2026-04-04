@@ -35,7 +35,7 @@ class AdminAuthenticatedSessionController extends Controller
             $seconds = RateLimiter::availableIn($key);
 
             throw ValidationException::withMessages([
-                'email' => "Cok fazla giris denemesi yapildi. {$seconds} saniye sonra tekrar deneyin.",
+                'email' => "Çok fazla giriş denemesi yapıldı. {$seconds} saniye sonra tekrar deneyin.",
             ]);
         }
 

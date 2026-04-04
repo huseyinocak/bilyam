@@ -18,12 +18,12 @@
                     <div class="flex items-center justify-between gap-4">
                         <div>
                             <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $role->name }}</p>
-                            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ $role->users_count }} kullanici atamasi</p>
+                            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ $role->users_count }} kullanıcı ataması</p>
                         </div>
                         @if(!in_array($role->name, $protectedRoles, true))
                             <form method="POST" action="{{ route('admin.roles.destroy', $role) }}">@csrf @method('DELETE')<button type="submit" class="rounded-full border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600">Sil</button></form>
                         @else
-                            <span class="text-sm text-slate-400">Sistem rolu</span>
+                            <span class="text-sm text-slate-400">Sistem rolü</span>
                         @endif
                     </div>
                     <form method="POST" action="{{ route('admin.roles.update', $role) }}" class="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">

@@ -32,9 +32,9 @@
             <option value="{{ $brand->id }}" @selected((string) old('brand_id', $product->brand_id) === (string) $brand->id)>{{ $brand->name }}</option>
         @endforeach
     </select>
-    <input type="text" name="technical_summary" value="{{ old('technical_summary', $product->technical_summary) }}" placeholder="Teknik ozet" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-    <input type="text" name="short_description" value="{{ old('short_description', $product->short_description) }}" placeholder="Kisa aciklama" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-    <textarea name="description" rows="5" placeholder="Detay aciklama" class="lg:col-span-2 rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">{{ old('description', $product->description) }}</textarea>
+    <input type="text" name="technical_summary" value="{{ old('technical_summary', $product->technical_summary) }}" placeholder="Teknik özet" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
+    <input type="text" name="short_description" value="{{ old('short_description', $product->short_description) }}" placeholder="Kısa açıklama" class="rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
+    <textarea name="description" rows="5" placeholder="Detay açıklama" class="lg:col-span-2 rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">{{ old('description', $product->description) }}</textarea>
     <input type="file" name="image" accept="image/*" class="lg:col-span-2 rounded-2xl border border-slate-300 px-4 py-3 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
     <input type="file" name="gallery_images[]" accept="image/*" multiple class="lg:col-span-2 rounded-2xl border border-slate-300 px-4 py-3 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
     <select name="use_case_ids[]" multiple class="lg:col-span-2 rounded-2xl border-slate-300 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white">
@@ -59,7 +59,7 @@
 
     <div class="lg:col-span-2 flex flex-wrap gap-4 text-sm">
         <label class="flex items-center gap-2"><input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" value="1" @checked((bool) old('is_active', $product->is_active))> Aktif</label>
-        <label class="flex items-center gap-2"><input type="hidden" name="is_featured" value="0"><input type="checkbox" name="is_featured" value="1" @checked((bool) old('is_featured', $product->is_featured))> One cikan</label>
+        <label class="flex items-center gap-2"><input type="hidden" name="is_featured" value="0"><input type="checkbox" name="is_featured" value="1" @checked((bool) old('is_featured', $product->is_featured))> Öne çıkan</label>
         <label class="flex items-center gap-2"><input type="hidden" name="show_price" value="0"><input type="checkbox" name="show_price" value="1" @checked((bool) old('show_price', $product->show_price))> Fiyat goster</label>
         <label class="flex items-center gap-2"><input type="hidden" name="show_stock" value="0"><input type="checkbox" name="show_stock" value="1" @checked((bool) old('show_stock', $product->show_stock))> Stok goster</label>
     </div>
