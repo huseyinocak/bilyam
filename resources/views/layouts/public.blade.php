@@ -2,6 +2,18 @@
 
 @section('body')
     <div class="min-h-screen" x-data="{ open: false }">
+        <div class="border-b border-slate-200 bg-slate-950 text-white dark:border-slate-800">
+            <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-xs font-medium sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+                <div class="flex flex-wrap items-center gap-3 text-slate-200">
+                    <span>Kurumsal teklif ve tedarik süreci</span>
+                    <span class="hidden h-1 w-1 rounded-full bg-white/40 lg:inline-flex"></span>
+                    <span>Çoklu ürün için tek talep akışı</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 text-slate-300">
+                    <span>Katalog + Teklif + Müşteri Takibi</span>
+                </div>
+            </div>
+        </div>
         <header class="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
             <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
                 <a href="{{ route('home') }}" class="flex items-center gap-3">

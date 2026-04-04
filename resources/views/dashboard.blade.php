@@ -39,6 +39,24 @@
                 </section>
             </div>
 
+            <div class="grid gap-6 lg:grid-cols-3">
+                <section class="marketing-surface p-6">
+                    <p class="eyebrow">Teklif Yönetimi</p>
+                    <h3 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">Son durumları hızlıca görün</h3>
+                    <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Bekleyen ve yanıtlanan taleplerinizi tek panelde takip ederek yeni aksiyonlarınızı belirleyin.</p>
+                </section>
+                <section class="marketing-surface p-6">
+                    <p class="eyebrow">Kurumsal Takip</p>
+                    <h3 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">Şirket ve profil bilgilerinizi güncel tutun</h3>
+                    <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Teklif sürecinde operasyon ekibi ile daha hızlı ilerlemek için hesap bilgilerinizi tek merkezde yönetin.</p>
+                </section>
+                <section class="marketing-surface p-6">
+                    <p class="eyebrow">Tekrar Talep</p>
+                    <h3 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">Önceki kalemlerden yeni talep oluşturun</h3>
+                    <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Geçmiş tekliflerinizden aynı veya benzer ürünleri yeniden listeleyerek süreci kısaltın.</p>
+                </section>
+            </div>
+
             @if ($latestQuotes->isNotEmpty())
                 <div class="marketing-surface p-6">
                     <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Son Teklifler</h3>
