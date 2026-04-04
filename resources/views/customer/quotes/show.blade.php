@@ -15,6 +15,20 @@
     <div class="py-12">
         <div class="mx-auto grid max-w-7xl gap-6 sm:px-6 lg:grid-cols-[minmax(0,1.2fr)_360px] lg:px-8">
             <section class="marketing-surface p-6">
+                <div class="mb-5 grid gap-3 sm:grid-cols-3">
+                    <div class="data-card">
+                        <p class="text-slate-500 dark:text-slate-400">Kalem sayısı</p>
+                        <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{{ $quote->items->count() }}</p>
+                    </div>
+                    <div class="data-card">
+                        <p class="text-slate-500 dark:text-slate-400">Durum</p>
+                        <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{{ $quote->status }}</p>
+                    </div>
+                    <div class="data-card">
+                        <p class="text-slate-500 dark:text-slate-400">Talep</p>
+                        <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{{ $quote->quote_no }}</p>
+                    </div>
+                </div>
                 <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Teklif Kalemleri</h2>
                 <div class="mt-5 space-y-4">
                     @foreach ($quote->items as $item)

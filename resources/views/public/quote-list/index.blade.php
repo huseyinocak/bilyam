@@ -35,6 +35,11 @@
                     <p class="eyebrow">Talep Kalemleri</p>
                     <h2 class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Teklif listenizi kontrol edin</h2>
                     <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Kalemleri güncelleyin, miktarları netleştirin ve yalnızca ihtiyaç duyduğunuz ürünlerle ilerleyin.</p>
+                    <div class="mt-5 flex flex-wrap gap-2">
+                        <span class="info-chip">Tek seferde çoklu talep</span>
+                        <span class="info-chip">Kurumsal iletişim odaklı</span>
+                        <span class="info-chip">Takip edilebilir operasyon</span>
+                    </div>
                 </div>
 
                 @error('quote_list')
@@ -82,6 +87,20 @@
                 <div class="marketing-surface lg:sticky lg:top-24 p-6">
                     <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Teklif Talep Formu</h2>
                     <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Misafir olarak devam edebilir veya üye girişi ile teklif geçmişinizi hesabınızda saklayabilirsiniz.</p>
+                    <div class="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                        <div class="data-card">
+                            <p class="text-slate-500 dark:text-slate-400">Talep tipi</p>
+                            <p class="mt-2 font-semibold text-slate-900 dark:text-white">Kurumsal</p>
+                        </div>
+                        <div class="data-card">
+                            <p class="text-slate-500 dark:text-slate-400">Kalem sayısı</p>
+                            <p class="mt-2 font-semibold text-slate-900 dark:text-white">{{ $totalItems }}</p>
+                        </div>
+                        <div class="data-card">
+                            <p class="text-slate-500 dark:text-slate-400">Akış</p>
+                            <p class="mt-2 font-semibold text-slate-900 dark:text-white">Teklif</p>
+                        </div>
+                    </div>
                     <form method="POST" action="{{ route('quote-list.submit') }}" class="mt-6 space-y-4">
                         @csrf
                         <div class="rounded-[1.5rem] border border-slate-200 p-4 dark:border-slate-800">

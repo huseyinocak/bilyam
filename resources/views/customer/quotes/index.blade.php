@@ -31,6 +31,20 @@
             </section>
 
             <section class="marketing-surface p-6">
+                <div class="mb-5 grid gap-4 md:grid-cols-3">
+                    <div class="data-card">
+                        <p class="text-slate-500 dark:text-slate-400">Toplam teklif</p>
+                        <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{{ $quotes->total() }}</p>
+                    </div>
+                    <div class="data-card">
+                        <p class="text-slate-500 dark:text-slate-400">Görünen sayfa</p>
+                        <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{{ $quotes->count() }}</p>
+                    </div>
+                    <div class="data-card">
+                        <p class="text-slate-500 dark:text-slate-400">Akış</p>
+                        <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Takip</p>
+                    </div>
+                </div>
                 @if ($quotes->count() === 0)
                     <div class="rounded-2xl border border-dashed border-slate-300 px-6 py-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">Henüz hesabınıza bağlı teklif bulunmuyor.</div>
                 @else
